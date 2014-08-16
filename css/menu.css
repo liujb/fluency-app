@@ -2,7 +2,7 @@
  #menu {
      display: -webkit-flex;
      display: flex;
-     font-size: 1.2rem;
+     font-size: 1.45rem;
      color: #666;
      display: none;
      position: absolute;
@@ -63,7 +63,7 @@
      width: 2.5rem;
      text-align: center;
      color: #888;
-     font-size: 1.3rem;
+     /*font-size: 1.3rem;*/
  }
  #dv-menu-slide span {
      display: inline-block;

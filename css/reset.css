@@ -5,7 +5,7 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, input, q, b, dl, d
     outline: none;
     font-size-adjust: none;
     /*防止横屏时字体变粗*/
-    -webkit-user-select: none;
+    /*-webkit-user-select: none;*/
     /*防止用户选择时弹出select，copy滋养*/
     -webkit-touch-callout: none;
     /*防止图片在touch时候弹出保存对话框*/
