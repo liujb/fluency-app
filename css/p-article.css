@@ -1,0 +1,72 @@
+#p-article {
+    display: none;
+    margin: 5% 5%;
+    text-align: left;
+}
+#p-article h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+#p-article>p {
+    margin: 1rem 0;
+    line-height: 2rem;
+    font-size: 1.3rem;
+}
+#p-article h6 {
+    height: 1.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+#p-article img {
+    border-radius: .5rem;
+    width: 100%;
+    height: 100%;
+}
+div.dv-tips {
+    margin: .8rem 0;
+    padding: 0.5rem;
+    line-height: 2rem;
+    text-align: left;
+    background-color: #f2f3f1;
+    border-radius: .5rem;
+    background-clip: padding-box;
+}
+div.dv-tag {
+    border-bottom: .1rem solid #d8d8d8;
+    padding: .6rem 0;
+}
+div.dv-tag i {
+    padding: 0.3rem;
+    font-size: 1.4rem;
+    color: blue;
+}
+div.dv-tag span {
+    line-height: 3rem;
+    height: 3rem;
+    padding: 0 .3rem;
+    background-color: #f1f2f3;
+    border-radius: .5rem;
+    color: blue;
+    font-size: 1.2rem;
+    margin: 0 .5rem;
+}
+div.dv-up-down {
+    margin: 1.5rem 0;
+    display: flex;
+    display: -webkit-flex;
+}
+.dv-up-down i {
+    width: 2.5rem;
+}
+.dv-up-down>div {
+    flex: 1;
+    text-align: center;
+}
+.dv-up-down .btn-white {
+    height: 3.5rem;
+    line-height: 3.5rem;
+    border: none;
+}

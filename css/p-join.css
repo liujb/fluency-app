@@ -1,0 +1,26 @@
+#p-join {
+    display: none;
+}
+#frm-code {
+    display: none;
+}
+#frm-code p:first-child {
+    border: none;
+    color: #888;
+    font-size: 1.25rem;
+}
+.p-phone {
+    padding-right: .5rem;
+    border: .1rem solid #d8d8d8;
+}
+#frm-code input {
+    padding: 0 .5rem;
+}
+#frm-code span>label {
+    font-size: 1.2rem;
+    color: #999;
+    border-radius: 1rem;
+    padding: 0 .5rem;
+    background-clip: padding-box;
+    background: #f1f1f1;
+}
