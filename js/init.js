@@ -44,7 +44,7 @@
             setTimeout(function() {
                 e.target.style.backgroundColor = '#fff';
 
-                base.go('p-article');
+                // base.go('p-article');
             }, 100);
         });
 
