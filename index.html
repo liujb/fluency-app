@@ -6,34 +6,48 @@
     <title>验房APP</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="stylesheet" type='text/css' href="./css/reset.css" >
+    <link rel="stylesheet" type='text/css' href="./css/reset.css">
+    <link rel="stylesheet" type='text/css' href="./lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./css/layout.css">
     <link rel="stylesheet" type='text/css' href="./css/base.css">
     <link rel="stylesheet" type='text/css' href="./css/header.css">
     <link rel="stylesheet" type='text/css' href="./css/menu.css">
     <link rel="stylesheet" type='text/css' href="./css/p-index.css">
     <link rel="stylesheet" type='text/css' href="./css/p-login.css">
+    <link rel="stylesheet" type='text/css' href="./css/p-join.css">
+    <link rel="stylesheet" type='text/css' href="./css/p-article.css">
+
 </head>
 
 <body>
+    <!--start header-->
     <header>
-        <p id='btn-invoke-menu'></p>
+        <span id='btn-invoke-menu' class='circle'> <i class="fa fa-user"></i>
+        </span>
         <h1>验房APP</h1>
         <a></a>
     </header>
+    <!--end header-->
 
+    <!--start menu-->
     <section id="menu">
         <ul>
-            <li><a id="btn-login">立即登陆</a>
+            <li>
+                <span class='circle'><i class="fa fa-user"></i>
+                </span>
+                <a id="lnk-login">立即登陆</a>
             </li>
-            <li>验房</li>
-            <li>攻略</li>
-            <li>要闻</li>
-            <li>设置</li>
-        </ul>
-        <div id="dv-menu-slide"></div>
-    </section>
 
+        </ul>
+        <div id="dv-menu-slide">
+            <span>
+                <i class="fa fa-times"></i>
+            </span>
+        </div>
+    </section>
+    <!--start menu-->
+
+    <!--start index page-->
     <section id="p-index">
         <img src="./upload/img/01.jpg" alt="">
         <ul class="list">
@@ -48,105 +62,108 @@
             <li></li>
         </ul>
     </section>
+    <!--start index page-->
 
+    <!--start login page-->
     <section id="p-login">
         <form action="#">
             <p>
-                <label for="t-phone">账号</label>
-                <input type="text" id="t-phone" name='t-phone' placeholder="邮箱账号/手机号">
+                <label for="t-account">账号</label>
+                <input type="text" id="t-account" name='t-account' placeholder="邮箱账号/手机号">
             </p>
             <p>
                 <label for="t-pwd">密码</label>
-                <input type="password" id='t-pwd' name='t-pwd' placeholder="密码"><span><label>忘记密码</label></span>
+                <input type="password" id='t-pwd' name='t-pwd' placeholder="密码">
+                <span>
+                    <label>忘记密码</label>
+                </span>
             </p>
-            <a class="btn-invalid">登 录</a>
-            <div><span>还没有账号？</span></div>
+            <a class="btn-invalid" id="btn-login">登 录</a>
+            <div>
+                <a id='lnk-sign'>
+                    <span>还没有账号？</span>
+                </a>
+            </div>
         </form>
     </section>
+    <!--start end login page-->
+
+    <!--start join page -->
+    <section id="p-join">
+        <form action="#" id='frm-phone'>
+            <p>
+                <label for="t-phone">手机号</label>
+                <input type="tel" id="t-phone" name='t-phone' placeholder="请输入手机号">
+            </p>
+            <a class="btn-invalid" id="btn-send-code">发送验证码</a>
+        </form>
+        <form action="#" id='frm-code'>
+            <p>您的手机号：
+                <label id="lab-phone"></label>
+            </p>
+            <p class="p-phone">
+                <input type="tel" id="t-code" name='t-code' placeholder="请输入手机收到的验证码">
+                <span>
+                    <label>没有收到？</label>
+                </span>
+            </p>
+            <a class="btn-invalid" id="btn-submit-code">提交验证码</a>
+        </form>
+    </section>
+    <!--end join page-->
+
+    <!--start details page-->
+    <section id='p-article'>
+       
+    </section>
+    <!--end details page-->
+
+
+    <!--start menu template-->
+    <script type="text/template" id="tpl-menu">
+        <% _.each(list, function(item){ %>
+            <li id="<%= item.id %>"><i class="fa <%= item.icon %>"></i><%= item.name %></li>
+        <% }); %>
+    </script>
+    <!--end menu template-->
+
+    <!--start article template-->
+    <script type="text/template" id="tpl-article">
+        <h3><%= title %></h3>
+        <h6><%= subtitle %></h6>
+        <% _.each(content, function(item){ %>
+            <% if(item.type === 'img'){ %>
+                <img src="<%= item.src %>" alt="">
+            <% } %>
+
+            <% if(item.type === 'text'){ %>
+                <p><%= item.text %></p>
+            <% } %>
+        <% }); %>
+        <div class="dv-tips">
+            <%= source %>
+        </div>
+        <div class='dv-tag'><i class="fa fa-tag"></i>
+            <% _.each(tags, function(item){ %>
+                <span><%= item.name %></span>
+            <% }); %>
+        </div>
+        <div class='dv-up-down'>
+            <a id="btn-up" class='btn-white'><i class='fa fa-thumbs-o-up'></i><%= thumbUpCount %></a>
+            <a id="btn-down" class='btn-white'><i class="fa fa-thumbs-o-down"></i><%= thumbDownCount %></a>
+        </div>
+    </script>
+    <!--end article template-->
 
     <script src="./lib/zepto/zepto.js"></script>
     <script src="./lib/underscore/underscore.js"></script>
     <script src="./lib/backbone/backbone.js"></script>
-
-    <script type="text/javascript">
-    (function($) {
-
-
-        var header = document.getElementsByTagName('header')[0],
-            sctMenu = document.getElementById('menu'),
-            sctIndex = document.getElementById("p-index"),
-            sctLogin = document.getElementById('p-login');
-
-        /**
-         * 唤醒菜单
-         * @param  {[type]} ev [description]
-         * @return {[type]}    [description]
-         */
-        $("#btn-invoke-menu").on("click", function(ev) {
-
-            // header.style.display = "none";
-            sctMenu.style.height = "100%";
-            sctMenu.style.display = "flex";
-            sctMenu.style.display = "-webkit-flex";
-        });
-
-
-        /**
-         * 隐藏菜单
-         * @param  {[type]} e [description]
-         * @return {[type]}   [description]
-         */
-        $("#dv-menu-slide").on('click', function(e) {
-
-            header.style.display = 'flex';
-            sctMenu.style.display = "none";
-        }, false);
-
-
-        /**
-         * 点击列表
-         * @param  {[type]} e [description]
-         * @return {[type]}   [description]
-         */
-        $('#p-index li').on('click', function(e) {
-            /**
-             * 获得LI元素
-             * @param  {[type]} node [description]
-             * @return {[type]}      [description]
-             */
-            var getLi = function(ele) {
-                if (ele.nodeName.toUpperCase() !== "LI") {
-                    return arguments.callee(ele.parentNode);
-                } else {
-                    return ele;
-                }
-            };
-            var tar = getLi(e.target);
-
-            tar.style.backgroundColor = '#d8d8d8';
-
-            setTimeout(function() {
-                tar.style.backgroundColor = '#fff';
-            }, 100);
-        });
-
-
-        /**
-         * login
-         * @param  {[type]} e [description]
-         * @return {[type]}   [description]
-         */
-        $("#btn-login").on("click", function(e) {
-            header.style.position = "relative";
-            sctIndex.style.display = "none";
-            sctMenu.style.display = "none";
-            sctLogin.style.display = 'block';
-        });
-
-
-
-    })(Zepto);
-    </script>
+    <script type="text/javascript" src="./js/base.js"></script>
+    <script type="text/javascript" src="./js/init.js"></script>
+    <script type="text/javascript" src="./js/p-index.js"></script>
+    <script type="text/javascript" src="./js/p-login.js"></script>
+    <script type="text/javascript" src="./js/p-join.js"></script>
+    <script type="text/javascript" src="./js/p-article.js"></script>
 </body>
 
 </html>
