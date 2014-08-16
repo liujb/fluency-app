@@ -1,0 +1,40 @@
+#p-login {
+    display: none;
+    font-size: 1.2rem;
+    color: #666;
+}
+form {
+    text-align: left;
+    padding: 1rem 2.4rem;
+}
+form>p {
+    height: 4.5rem;
+    line-height: 4.5rem;
+    display: flex;
+    border-bottom: 0.1rem solid #d8d8d8;
+}
+p>label {
+    font-size: 1.3rem;
+    margin-right: .8rem
+}
+p>input {
+    font-size: 1.2rem;
+    flex: 1;
+}
+form>a {
+    margin-top: 2.5rem;
+}
+span>label {
+    font-size: 1.2rem;
+    color: #999;
+    border: 0.1rem solid #d8d8d8;
+    border-radius: 1rem;
+    padding: 0 .5rem;
+    background-clip: padding-box;
+}
+form>div {
+    height: 8rem;
+    line-height: 8rem;
+    text-align: center;
+    color: #888;
+}

@@ -1,0 +1,39 @@
+/*start p-index*/
+
+#p-index {
+    font-size: 1.2rem;
+    color: #666;
+}
+#p-index>img {
+    width: 100%;
+    height: 18rem;
+    border: 0;
+}
+#p-index>ul>li {
+    height: 10rem;
+    line-height: 8rem;
+    border-bottom: 0.1rem solid #d8d8d8;
+    padding: 0 1rem;
+    list-style: none;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+}
+.list img {
+    width: 15rem;
+    height: 8rem;
+}
+.list .desc {
+    margin-left: 0.8rem;
+}
+.list h2 {
+    text-align: left;
+    line-height: 2.2rem;
+    font-size: 1.5rem;
+}
+.list p {
+    text-align: left;
+    line-height: 2.0rem;
+    color: #888;
+}
+/*end p-index*/

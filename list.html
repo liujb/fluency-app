@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>iNoBounce Example - Full</title>
+
+    <!-- Ensure correct presentation on iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Document</title>
+    <style type="text/css">
+    html {
+        font-size: 16px;
+    }
+    html,
+    body {
+        height: 100%;
+        padding: 0;
+        margin: 0
+    }
+    .iOCSS {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        font-family: Helvetica;
+        overflow: hidden;
+    }
+    header {
+        display: flex;
+        -webkit-box-orient: horizontal;
+        flex-direction: row;
+        -webkit-box-align: center;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        box-sizing: border-box;
+        height: 2.9375rem;
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.1);
+        border-bottom: .0625rem solid #385570;
+        background: -webkit-linear-gradient(top, #beccdd 0, #587397 100%);
+    }
+    header h1 {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.25rem;
+        line-height: 3rem;
+        text-align: center;
+        text-shadow: 0 -.0625rem 0 rgba(0, 0, 0, 0.45);
+    }
+    body {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        font-family: Helvetica;
+        overflow: hidden;
+    }
+    ul.scrollable {
+        min-height: 0;
+        -webkit-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    ul.list {
+        -webkit-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    ul>li {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        width: 100%;
+        height: 3rem;
+        padding: 0 .5rem;
+        border-bottom: .0625rem solid #e0e0e0;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    </style>
+
+
+</head>
+
+<body class='iOCSS'>
+
+    <header class="header">
+        <h1>iNoBounce</h1>
+    </header>
+
+    <ul class="list scrollable">
+
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+        <li>List Item 6</li>
+        <li>List Item 7</li>
+        <li>List Item 8</li>
+        <li>List Item 9</li>
+        <li>List Item 10</li>
+        <li>List Item 11</li>
+        <li>List Item 12</li>
+        <li>List Item 13</li>
+        <li>List Item 14</li>
+        <li>List Item 15</li>
+        <li>List Item 16</li>
+        <li>List Item 17</li>
+        <li>List Item 18</li>
+        <li>List Item 19</li>
+        <li>List Item 20</li>
+        <li>List Item 21</li>
+        <li>List Item 22</li>
+        <li>List Item 23</li>
+        <li>List Item 24</li>
+        <li>List Item 25</li>
+        <li>List Item 26</li>
+        <li>List Item 27</li>
+        <li>List Item 28</li>
+        <li>List Item 29</li>
+        <li>List Item 30</li>
+        <li>List Item 31</li>
+        <li>List Item 32</li>
+        <li>List Item 33</li>
+        <li>List Item 34</li>
+        <li>List Item 35</li>
+        <li>List Item 36</li>
+        <li>List Item 37</li>
+        <li>List Item 38</li>
+        <li>List Item 39</li>
+        <li>List Item 40</li>
+
+    </ul>
+    <script type="text/javascript" src="/static/webapp/didi.min.js"></script>
+    <script src="/static/webapp/lib/inobounce.js"></script>
+
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function(ev) {
+        diff_platform({
+            android: function() {
+                // alert(iNoBounce.isEnabled());
+                iNoBounce.disable();
+            },
+            ios: function() {
+                // alert("fuck you");
+                iNoBounce.enable()
+            }
+        });
+
+        var ul = document.getElementsByTagName('ul')[0];
+
+        ul.addEventListener('scroll', function(ev) {
+            var top = ul.scrollTop || ul.scrollTop;
+            console.log(top);
+        });
+    }, false);
+    </script>
+
+</body>
+
+</html>

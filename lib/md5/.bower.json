@@ -1,0 +1,15 @@
+{
+  "name": "md5",
+  "_cacheHeaders": {
+    "ETag": "\"53d280cf-ec3\"",
+    "Last-Modified": "Fri, 25 Jul 2014 16:07:43 GMT",
+    "Content-Length": "3779",
+    "Content-Type": "application/x-javascript"
+  },
+  "_release": "e-tag:53d280cf-",
+  "main": "index.js",
+  "_source": "http://static.diditaxi.com.cn/webapp/lib/md5.js",
+  "_target": "*",
+  "_originalSource": "http://static.diditaxi.com.cn/webapp/lib/md5.js",
+  "_direct": true
+}

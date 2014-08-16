@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>验房APP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type='text/css' href="./css/reset.css" >
+    <link rel="stylesheet" type="text/css" href="./css/layout.css">
+    <link rel="stylesheet" type='text/css' href="./css/base.css">
+    <link rel="stylesheet" type='text/css' href="./css/header.css">
+    <link rel="stylesheet" type='text/css' href="./css/menu.css">
+    <link rel="stylesheet" type='text/css' href="./css/p-index.css">
+    <link rel="stylesheet" type='text/css' href="./css/p-login.css">
+</head>
+
+<body>
+    <header>
+        <p id='btn-invoke-menu'></p>
+        <h1>验房APP</h1>
+        <a></a>
+    </header>
+
+    <section id="menu">
+        <ul>
+            <li><a id="btn-login">立即登陆</a>
+            </li>
+            <li>验房</li>
+            <li>攻略</li>
+            <li>要闻</li>
+            <li>设置</li>
+        </ul>
+        <div id="dv-menu-slide"></div>
+    </section>
+
+    <section id="p-index">
+        <img src="./upload/img/01.jpg" alt="">
+        <ul class="list">
+            <li>
+                <img src="./upload/img/02.jpg" alt="">
+                <div class='desc'>
+                    <h2>这里是标题</h2>
+                    <p>这试试发嘎嘎嘎损沙发沙发撒发生过撒公肥私共商国是</p>
+                </div>
+            </li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+
+    <section id="p-login">
+        <form action="#">
+            <p>
+                <label for="t-phone">账号</label>
+                <input type="text" id="t-phone" name='t-phone' placeholder="邮箱账号/手机号">
+            </p>
+            <p>
+                <label for="t-pwd">密码</label>
+                <input type="password" id='t-pwd' name='t-pwd' placeholder="密码"><span><label>忘记密码</label></span>
+            </p>
+            <a class="btn-invalid">登 录</a>
+            <div><span>还没有账号？</span></div>
+        </form>
+    </section>
+
+    <script src="./lib/zepto/zepto.js"></script>
+    <script src="./lib/underscore/underscore.js"></script>
+    <script src="./lib/backbone/backbone.js"></script>
+
+    <script type="text/javascript">
+    (function($) {
+
+
+        var header = document.getElementsByTagName('header')[0],
+            sctMenu = document.getElementById('menu'),
+            sctIndex = document.getElementById("p-index"),
+            sctLogin = document.getElementById('p-login');
+
+        /**
+         * 唤醒菜单
+         * @param  {[type]} ev [description]
+         * @return {[type]}    [description]
+         */
+        $("#btn-invoke-menu").on("click", function(ev) {
+
+            // header.style.display = "none";
+            sctMenu.style.height = "100%";
+            sctMenu.style.display = "flex";
+            sctMenu.style.display = "-webkit-flex";
+        });
+
+
+        /**
+         * 隐藏菜单
+         * @param  {[type]} e [description]
+         * @return {[type]}   [description]
+         */
+        $("#dv-menu-slide").on('click', function(e) {
+
+            header.style.display = 'flex';
+            sctMenu.style.display = "none";
+        }, false);
+
+
+        /**
+         * 点击列表
+         * @param  {[type]} e [description]
+         * @return {[type]}   [description]
+         */
+        $('#p-index li').on('click', function(e) {
+            /**
+             * 获得LI元素
+             * @param  {[type]} node [description]
+             * @return {[type]}      [description]
+             */
+            var getLi = function(ele) {
+                if (ele.nodeName.toUpperCase() !== "LI") {
+                    return arguments.callee(ele.parentNode);
+                } else {
+                    return ele;
+                }
+            };
+            var tar = getLi(e.target);
+
+            tar.style.backgroundColor = '#d8d8d8';
+
+            setTimeout(function() {
+                tar.style.backgroundColor = '#fff';
+            }, 100);
+        });
+
+
+        /**
+         * login
+         * @param  {[type]} e [description]
+         * @return {[type]}   [description]
+         */
+        $("#btn-login").on("click", function(e) {
+            header.style.position = "relative";
+            sctIndex.style.display = "none";
+            sctMenu.style.display = "none";
+            sctLogin.style.display = 'block';
+        });
+
+
+
+    })(Zepto);
+    </script>
+</body>
+
+</html>

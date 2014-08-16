@@ -1,0 +1,20 @@
+{
+  "name": "y",
+  "version": "0.0.1",
+  "authors": [
+    "JiangbeiLiu <liujiangbei@126.com>"
+  ],
+  "description": "Want to building an fluency webapp like native app",
+  "keywords": [
+    "fluency"
+  ],
+  "license": "MIT",
+  "directory":"./app/lib/",
+  "devDependencies": {
+    "backbone": "~1.1.2",
+    "zepto": "~1.1.4",
+    "requirejs": "~2.1.14",
+    "bootstrap": "~3.2.0",
+    "swipe": "~2.0.0"
+  }
+}
