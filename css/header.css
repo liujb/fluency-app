@@ -11,6 +11,7 @@ header {
     position: relative;
     box-sizing: border-box;
     height: 4.4rem;
+    line-height: 4.4rem;
     background-color: #f2f3f1;
     border-bottom: 0.1rem solid #d8d8d8;
     position: fixed;
