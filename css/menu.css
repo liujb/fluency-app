@@ -24,8 +24,8 @@
      opacity: 0.5;
  }
  #menu>ul>li:first-child {
-     height: 13rem;
-     line-height: 12rem;
+     height: 11rem;
+     line-height: 10rem;
      margin: 0;
      text-align: center;
      color: #888;
@@ -50,7 +50,7 @@
      display: block;
      line-height: 1.5rem;
      position: relative;
-     top: -3.3rem;
+     top: -2.3rem;
  }
  #menu>ul>li {
      height: 5rem;
@@ -62,8 +62,7 @@
  #menu i {
      width: 2.5rem;
      text-align: center;
-     color: #888;
-     /*font-size: 1.3rem;*/
+     color: #999;
  }
  #dv-menu-slide span {
      display: inline-block;
@@ -76,6 +75,6 @@
      margin-top: 1rem;
  }
  #dv-menu-slide i {
-     font-size: 1.5rem;
+     /*font-size: 1.5rem;*/
  }
  /*end menu*/
