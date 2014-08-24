@@ -39,7 +39,8 @@ require(['menu', 'p-index', 'dialog'], function(menu, index, dialog) {
     console.log(dialog);
     console.log($); //在menu中require了
     console.log(_); //在p-index中require了
-    dialog.loading({
-        text: "加载中..."
-    });
+    // dialog.loading({
+    //     text: "加载中...",
+        
+    // });
 });

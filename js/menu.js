@@ -64,9 +64,8 @@ define(['zepto', 'underscore', 'base'], function(zepto, _, base) {
         var tar = getLi(e.target);
         console.log(tar);
 
-        if (tar.id !== "li-user-info") {
+        if (tar.id !== "li-user－info") {
             tar.style.backgroundColor = '#ffffff';
-
 
             setTimeout(function() {
                 tar.style.backgroundColor = '#f1f1f1';
