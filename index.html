@@ -32,12 +32,11 @@
     <!--start menu-->
     <section id="menu">
         <ul>
-            <li>
+            <li id="li-user－info">
                 <span class='circle'><i class="fa fa-user"></i>
                 </span>
                 <a id="lnk-login">立即登陆</a>
             </li>
-
         </ul>
         <div id="dv-menu-slide">
             <span>
@@ -49,17 +48,10 @@
 
     <!--start index page-->
     <section id="p-index">
-        <img src="./upload/img/01.jpg" alt="">
-        <ul class="list">
-            <li>
-                <img src="./upload/img/02.jpg" alt="">
-                <div class='desc'>
-                    <h2>这里是标题</h2>
-                    <p>这试试发嘎嘎嘎损沙发沙发撒发生过撒公肥私共商国是</p>
-                </div>
-            </li>
-            <li></li>
-            <li></li>
+        <div id='dv-swipe'>
+            <img src="./upload/img/02.jpg" alt="">
+        </div>
+        <ul id="ul-list" class="list">
         </ul>
     </section>
     <!--start index page-->
@@ -114,7 +106,7 @@
 
     <!--start details page-->
     <section id='p-article'>
-       
+
     </section>
     <!--end details page-->
 
@@ -127,10 +119,31 @@
     </script>
     <!--end menu template-->
 
+
+    <!-- start swipe template -->
+
+    <!-- end swipe template -->
+
+
+    <!-- start index template -->
+    <script type="text/template" id="tpl-index">
+        <% _.each(list, function(item){ %>
+            <li>
+                <img src="<%= item.thumbUrl %>" alt="">
+                <div class='desc'>
+                    <h2><%= item.title %></h2>
+                    <p><%= item.desc %></p>
+                </div>
+            </li>
+        <% }); %>
+    </script>
+    <!-- end index template -->
+
+
     <!--start article template-->
     <script type="text/template" id="tpl-article">
         <h3><%= title %></h3>
-        <h6><%= subtitle %></h6>
+        <h6><%= pubtime %> <%= subtitle %></h6>
         <% _.each(content, function(item){ %>
             <% if(item.type === 'img'){ %>
                 <img src="<%= item.src %>" alt="">
@@ -155,15 +168,17 @@
     </script>
     <!--end article template-->
 
-    <script src="./lib/zepto/zepto.js"></script>
-    <script src="./lib/underscore/underscore.js"></script>
-    <script src="./lib/backbone/backbone.js"></script>
-    <script type="text/javascript" src="./js/base.js"></script>
-    <script type="text/javascript" src="./js/init.js"></script>
-    <script type="text/javascript" src="./js/p-index.js"></script>
-    <script type="text/javascript" src="./js/p-login.js"></script>
-    <script type="text/javascript" src="./js/p-join.js"></script>
-    <script type="text/javascript" src="./js/p-article.js"></script>
+    <script data-main="./js/main" src="./lib/requirejs/require.js" ></script>
+    
+    <!-- type="text/javascript" defer async="true"// <script src="./lib/zepto/zepto.js"></script>
+    // <script src="./lib/underscore/underscore.js"></script>
+    // <script src="./lib/backbone/backbone.js"></script>
+    // <script type="text/javascript" src="./js/base.js"></script>
+    // <script type="text/javascript" src="./js/init.js"></script>
+    // <script type="text/javascript" src="./js/p-index.js"></script>
+    // <script type="text/javascript" src="./js/p-login.js"></script>
+    // <script type="text/javascript" src="./js/p-join.js"></script>
+    // <script type="text/javascript" src="./js/p-article.js"></script> -->
 </body>
 
 </html>
