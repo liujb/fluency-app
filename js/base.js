@@ -1,10 +1,9 @@
-(function($) {
+define(['zepto'], function(zepto) {
 
-
-    var base = {};
-
-    var header = $('header'),
+    var base = {},
+        header = $('header'),
         allScts = $('section');
+
     /**
      * 跳转页面
      * @param  {[type]} pageId [description]
@@ -12,6 +11,8 @@
      */
     base.go = function(pageId) {
         if (!pageId) return;
+
+        require([pageId]);
 
         allScts.each(function(index, item) {
             var val = (item.id !== pageId) ? 'none' : 'block';
@@ -21,6 +22,8 @@
         header.css({
             'position': 'relative'
         });
+
+
     };
 
 
@@ -36,6 +39,7 @@
         });
     };
 
+
     /**
      * 展开左侧菜单
      * @return {[type]} [description]
@@ -48,10 +52,16 @@
         });
     };
 
+
+    /**
+     * back
+     * @return {[type]} [description]
+     */
     base.back = function() {
 
     };
 
     window.base = base;
 
-})(Zepto);
+    return base;
+});

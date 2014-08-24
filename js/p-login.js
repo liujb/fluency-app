@@ -1,4 +1,5 @@
-(function($) {
+// define(['zepto', 'base'], function(zepto, base) {});
+(function($, _, base) {
     var txtAcc = $('#t-account'),
         txtPwd = $('#t-pwd'),
         btnLogin = $('#btn-login'),
@@ -45,5 +46,4 @@
     lnkSign.on('click', function(e) {
         base.go('p-join');
     }, false);
-
-})(Zepto);
+})($, _, base)

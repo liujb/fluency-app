@@ -1,5 +1,6 @@
-(function($) {
+// define(['zepto', 'base'], function(zepto, base) {});
 
+(function($, _, base) {
     var txtPhone = $('#t-phone'),
         txtCode = $('#t-code'),
         btnSendCode = $('#btn-send-code'),
@@ -77,5 +78,4 @@
         }
 
     }, false);
-
-})(Zepto);
+})($, _, base)
